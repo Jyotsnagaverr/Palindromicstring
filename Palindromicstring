@@ -1,0 +1,23 @@
+bool check(string S,int e1,int s2){
+    while(e1>=0 && s2<S.size()){
+        if(S[e1]!=S[s2]){
+            return false;
+        }
+        e1--;
+        s2++;
+    }
+    return true;
+}
+ 
+int isPalindrome(string S)
+{
+    // Your code goes here
+    int len=S.size();
+    
+    if(len%2 == 0){
+        return check(S,(len/2)-1,(len/2));
+    }
+    else{
+        return check(S,(len/2),(len/2));
+    }
+}
